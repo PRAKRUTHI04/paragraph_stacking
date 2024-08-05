@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>paragraph stacking</title>
+<style>
+.ls1{
+border:solid-thick block;
+padding:1in;
+width:500px;
+position:absolute;
+background-color:pink;
+top:100px;
+left:200px;
+}
+.ls2{
+border:solid-thick block;
+padding:1in;
+width:500px;
+position:absolute;
+background-color:blue;
+top:150px;
+left:250px;
+}
+.ls3{
+border:solid-thick block;
+padding:1in;
+width:500px;
+position:absolute;
+background-color:gray;
+top:200px;
+left:300px;
+}
+.ls4{
+border:solid-thick block;
+padding:1in;
+width:500px;
+position:absolute;
+background-color:yellow;
+top:250px;
+left:350px;
+}
+</style>
+<script type='text/Javascript'>
+var toplayer='layer4';
+function stack(totop)
+{
+var oldtop=document.getElementById(toplayer).style;
+var newtop=document.getElementById(totop).style;
+oldtop.zIndex="0";
+newtop.zIndex="10";
+toplayer=document.getElementById(totop).id;
+}
+</script>
+</head>
+<body bgcolor="teal">
+<h1>program to demonstrate usage of stacking of paragraph</h1>
+<div class="ls1" id="layer1" onmouseover="stack('layer1')">
+<b>....first paragraph(pink)....</b>
+</div>
+<div class="ls2" id="layer2" onmouseover="stack('layer2')">
+<b>....second paragraph(blue)....</b>
+</div>
+<div class="ls3" id="layer3" onmouseover="stack('layer3')">
+<b>....third paragraph(grey)....</b>
+</div>
+<div class="ls4" id="layer4" onmouseover="stack('layer4')">
+<b>....fourth paragraph(yellow)....</b>
+</div>
+</body>
+</html>
